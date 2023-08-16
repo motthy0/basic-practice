@@ -1,22 +1,19 @@
-function displayTime(){
-    var dateTime = new Date();
-    var hrs = dateTime.getHours();
-    var min = dateTime.getMinutes();
-    var sec = dateTime.getSeconds();
-    var session = document.getElementById('session');
+const countDate = new Date("Jan 10 2022 14:30:55").getTime();
 
-    if(hrs >= 12){
-        session.innerHTML = 'PM';
-    }else{
-        session.innerHTML = 'AM';
+var x = setInterval(function(){
+    let now = new Date().getTime();
+
+    let distance = countDate - now;
+
+    var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 *60));
+    var min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var sec = Math.floor((distance % (1000 * 60 * 60)) / 1000);
+
+    document.getElementById('timer').innerHTML = d + "d " + hrs + "h " + min + "m " + sec + "s ";
+
+    if(distance < 0){
+        clearInterval(x);
+        document.getElementById('timer').innerHTML = "Time's Up";
     }
-
-    if(hrs > 12){
-        hrs = hrs - 12;
-    }
-
-    document.getElementById('hours').innerHTML = hrs;
-    document.getElementById('minutes').innerHTML = min;
-    document.getElementById('seconds').innerHTML = sec;
-}
-setInterval(displayTime, 10);
+})
