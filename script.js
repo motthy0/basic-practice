@@ -13,7 +13,7 @@ for(let i=0; i<columns; i++){
     drops.push(0);
 }
 let str = "JavaScript Hacking Effect";
-function draw(){
+export default function draw(){
     context.fillStyle = "rgba(0,0,0,0.05)";
     context.fillRect(0, 0, W, H);
     context.fontSize = "700 " + fontSize + "px";
