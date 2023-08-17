@@ -1,19 +1,33 @@
-const countDate = new Date("Jan 10 2022 14:30:55").getTime();
+let canvas = document.getElementById('canvas');
+let context = canvas.getContext('2d');
+let W = window.innerWidth;
+let H = window.innerHeight;
 
-var x = setInterval(function(){
-    let now = new Date().getTime();
+canvas.width = W;
+canvas.height = H;
 
-    let distance = countDate - now;
-
-    var d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hrs = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 *60));
-    var min = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var sec = Math.floor((distance % (1000 * 60 * 60)) / 1000);
-
-    document.getElementById('timer').innerHTML = d + "d " + hrs + "h " + min + "m " + sec + "s ";
-
-    if(distance < 0){
-        clearInterval(x);
-        document.getElementById('timer').innerHTML = "Time's Up";
+let fontSize = 16;
+let columns = Math.floor(W / fontSize);
+let drops = [];
+for(let i=0; i<columns; i++){
+    drops.push(0);
+}
+let str = "JavaScript Hacking Effect";
+function draw(){
+    context.fillStyle = "rgba(0,0,0,0.05)";
+    context.fillRect(0, 0, W, H);
+    context.fontSize = "700 " + fontSize + "px";
+    context.fillStyle = "#00cc33";
+    for(let i=0; i<columns; i++){
+        let index = Math.floor(Math.random()*str.length);
+        let x = i * fontSize;
+        let y = drops[i] * fontSize;
+        context.fillText(str[index], x, y);
+        if(y >= canvas.height && Math.random() > 0.99){
+            drops[i] = 0;
+        }
+        drops[i]++;
     }
-})
+}
+draw();
+setInterval(draw, 35);
