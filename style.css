@@ -1,43 +1,37 @@
-html{
-  height: 100%;
-}
 body{
-  background: linear-gradient(to right, #141e30, #243b55);
+  background: linear-gradient(to right,#466a7e, #190a3b);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
-#output{
-  font-size: 13px;
-}
-span{
-  color: red;
-  white-space: nowrap;
-  font-size: 13px;
-}
-.wrapper{
+.container{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, .5);
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: rgb(38,57, 77) 0px 20px 30px -10px;
+  text-align: center;
+  border-radius: 5%;
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  padding: 0px 200px 0px 200px;
 }
-input{
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
-  color: white;
+h1{
+  font-size: 100px;
 }
-select{
-  outline: none;
+#score{
+  font-size: 200px;
+  -webkit-text-stroke: 5px white;
+  font-family: cursive;
+}
+.inner{
+  display: inline-block;
+  padding: 40px;
 }
 button{
   color: white;
-  padding: 10px;
-  border: 1px solid white;
+  border: none;
+  font-size: 250px;
   background: none;
   cursor: pointer;
+  display: inline-block;
+  -webkit-text-stroke: 3px white;
 }
