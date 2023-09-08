@@ -1,37 +1,33 @@
 body{
-  background: linear-gradient(to right,#466a7e, #190a3b);
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #485563, #29323c);   
 }
 .container{
+  max-width: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: 1px solid white;
+  padding: 30px;
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.input-field{
   text-align: center;
-  border-radius: 5%;
-  border: 1px solid transparent;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  padding: 0px 200px 0px 200px;
 }
-h1{
-  font-size: 100px;
-}
-#score{
-  font-size: 200px;
-  -webkit-text-stroke: 5px white;
-  font-family: cursive;
-}
-.inner{
-  display: inline-block;
-  padding: 40px;
-}
-button{
-  color: white;
+input[type="text"]{
+  color: #fff;
   border: none;
-  font-size: 250px;
-  background: none;
+  background-color: #485563;
+  max-width: 400px;
+}
+.todos li{
+  background-color: #fff;
+  color: black;
+  font-weight: bold;
+}
+.delete{
   cursor: pointer;
-  display: inline-block;
-  -webkit-text-stroke: 3px white;
+  color: red;
 }
